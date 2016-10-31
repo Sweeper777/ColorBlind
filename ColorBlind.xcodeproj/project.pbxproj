@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188293E7AC305C06E6B57D97 /* Pods_ColorBlind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1721E796604AF0637C75DBF /* Pods_ColorBlind.framework */; };
 		5A1FB0B01DC7290D0074DD11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FB0AF1DC7290D0074DD11 /* AppDelegate.swift */; };
 		5A1FB0B21DC7290D0074DD11 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FB0B11DC7290D0074DD11 /* GameScene.sks */; };
 		5A1FB0B41DC7290D0074DD11 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FB0B31DC7290D0074DD11 /* Actions.sks */; };
@@ -15,6 +16,9 @@
 		5A1FB0BB1DC7290D0074DD11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FB0B91DC7290D0074DD11 /* Main.storyboard */; };
 		5A1FB0BD1DC7290D0074DD11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FB0BC1DC7290D0074DD11 /* Assets.xcassets */; };
 		5A1FB0C01DC7290D0074DD11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FB0BE1DC7290D0074DD11 /* LaunchScreen.storyboard */; };
+		5A1FB0CA1DC72ADA0074DD11 /* EZSwiftExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1FB0C71DC72ADA0074DD11 /* EZSwiftExtensions.framework */; };
+		5A1FB0CB1DC72ADA0074DD11 /* HLSpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1FB0C81DC72ADA0074DD11 /* HLSpriteKit.framework */; };
+		5A1FB0CC1DC72ADA0074DD11 /* SwiftRandom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1FB0C91DC72ADA0074DD11 /* SwiftRandom.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,12 @@
 		5A1FB0BC1DC7290D0074DD11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A1FB0BF1DC7290D0074DD11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A1FB0C11DC7290D0074DD11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A1FB0C71DC72ADA0074DD11 /* EZSwiftExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EZSwiftExtensions.framework; path = "../../Library/Developer/Xcode/DerivedData/ColorBlind-bmdvcnmruigbbtdosesbckjaorfs/Build/Products/Debug-iphonesimulator/EZSwiftExtensions/EZSwiftExtensions.framework"; sourceTree = "<group>"; };
+		5A1FB0C81DC72ADA0074DD11 /* HLSpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HLSpriteKit.framework; path = "Pods/../build/Debug-iphoneos/HLSpriteKit/HLSpriteKit.framework"; sourceTree = "<group>"; };
+		5A1FB0C91DC72ADA0074DD11 /* SwiftRandom.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftRandom.framework; path = "../../Library/Developer/Xcode/DerivedData/ColorBlind-bmdvcnmruigbbtdosesbckjaorfs/Build/Products/Debug-iphonesimulator/SwiftRandom/SwiftRandom.framework"; sourceTree = "<group>"; };
+		8745C6540F621BDF0E82041C /* Pods-ColorBlind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorBlind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ColorBlind/Pods-ColorBlind.debug.xcconfig"; sourceTree = "<group>"; };
+		A0757E737E171E289CE62865 /* Pods-ColorBlind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorBlind.release.xcconfig"; path = "Pods/Target Support Files/Pods-ColorBlind/Pods-ColorBlind.release.xcconfig"; sourceTree = "<group>"; };
+		E1721E796604AF0637C75DBF /* Pods_ColorBlind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorBlind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +45,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1FB0CA1DC72ADA0074DD11 /* EZSwiftExtensions.framework in Frameworks */,
+				5A1FB0CB1DC72ADA0074DD11 /* HLSpriteKit.framework in Frameworks */,
+				5A1FB0CC1DC72ADA0074DD11 /* SwiftRandom.framework in Frameworks */,
+				188293E7AC305C06E6B57D97 /* Pods_ColorBlind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1284A7D1EB5A774FC02B14DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A1FB0C71DC72ADA0074DD11 /* EZSwiftExtensions.framework */,
+				5A1FB0C81DC72ADA0074DD11 /* HLSpriteKit.framework */,
+				5A1FB0C91DC72ADA0074DD11 /* SwiftRandom.framework */,
+				E1721E796604AF0637C75DBF /* Pods_ColorBlind.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5A1FB0A31DC7290D0074DD11 = {
 			isa = PBXGroup;
 			children = (
 				5A1FB0AE1DC7290D0074DD11 /* ColorBlind */,
 				5A1FB0AD1DC7290D0074DD11 /* Products */,
+				F12024EB815DDDF752534FF5 /* Pods */,
+				1284A7D1EB5A774FC02B14DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +100,15 @@
 			path = ColorBlind;
 			sourceTree = "<group>";
 		};
+		F12024EB815DDDF752534FF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8745C6540F621BDF0E82041C /* Pods-ColorBlind.debug.xcconfig */,
+				A0757E737E171E289CE62865 /* Pods-ColorBlind.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A1FB0C41DC7290D0074DD11 /* Build configuration list for PBXNativeTarget "ColorBlind" */;
 			buildPhases = (
+				94B80C619288F2C29BEC1947 /* [CP] Check Pods Manifest.lock */,
 				5A1FB0A81DC7290D0074DD11 /* Sources */,
 				5A1FB0A91DC7290D0074DD11 /* Frameworks */,
 				5A1FB0AA1DC7290D0074DD11 /* Resources */,
+				F0FCAB04D088724CEAF80F2C /* [CP] Embed Pods Frameworks */,
+				2D15D37508A3ABF7EF70FBBE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,6 +181,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D15D37508A3ABF7EF70FBBE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColorBlind/Pods-ColorBlind-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94B80C619288F2C29BEC1947 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0FCAB04D088724CEAF80F2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColorBlind/Pods-ColorBlind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A1FB0A81DC7290D0074DD11 /* Sources */ = {
@@ -271,10 +358,16 @@
 		};
 		5A1FB0C51DC7290D0074DD11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8745C6540F621BDF0E82041C /* Pods-ColorBlind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/HLSpriteKit",
+				);
 				INFOPLIST_FILE = ColorBlind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ColorBlind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -284,10 +377,16 @@
 		};
 		5A1FB0C61DC7290D0074DD11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0757E737E171E289CE62865 /* Pods-ColorBlind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/HLSpriteKit",
+				);
 				INFOPLIST_FILE = ColorBlind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ColorBlind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -314,6 +413,7 @@
 				5A1FB0C61DC7290D0074DD11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

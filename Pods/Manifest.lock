@@ -1,0 +1,27 @@
+PODS:
+  - EZSwiftExtensions (1.7)
+  - HLSpriteKit (1.4.0)
+  - SwiftRandom (1.0.0)
+
+DEPENDENCIES:
+  - EZSwiftExtensions
+  - HLSpriteKit (from `https://github.com/hilogames/HLSpriteKit.git`)
+  - SwiftRandom
+
+EXTERNAL SOURCES:
+  HLSpriteKit:
+    :git: https://github.com/hilogames/HLSpriteKit.git
+
+CHECKOUT OPTIONS:
+  HLSpriteKit:
+    :commit: f938a656987cfbe5c1cf942dacdbb971541b2d76
+    :git: https://github.com/hilogames/HLSpriteKit.git
+
+SPEC CHECKSUMS:
+  EZSwiftExtensions: 4afef248066a036903d8496bf07bc355b22ce766
+  HLSpriteKit: 228003674e4737d26e189780a3b9ddd2ac6a76b8
+  SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
+
+PODFILE CHECKSUM: f94c35d385c96696126ef857b1ffc1255e8b4d4a
+
+COCOAPODS: 1.1.0.beta.1
