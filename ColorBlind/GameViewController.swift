@@ -1,17 +1,10 @@
-//
-//  GameViewController.swift
-//  ColorBlind
-//
-//  Created by Mulang Su on 31/10/2016.
-//  Copyright © 2016 Mulang Su. All rights reserved.
-//
-
 import UIKit
 import SpriteKit
-import GameplayKit
+import AVFoundation
 
 class GameViewController: UIViewController {
-
+    let audioPlayer = try! AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "Fearless First", withExtension: "mp3")!)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +22,9 @@ class GameViewController: UIViewController {
             
             view.showsFPS = true
             view.showsNodeCount = true
+            audioPlayer.prepareToPlay()
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.play()
         }
     }
 
