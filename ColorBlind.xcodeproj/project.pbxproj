@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		188293E7AC305C06E6B57D97 /* Pods_ColorBlind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1721E796604AF0637C75DBF /* Pods_ColorBlind.framework */; };
+		5A1D73F61DC8AA89004130C1 /* Fearless First.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5A1D73F51DC8AA89004130C1 /* Fearless First.mp3 */; };
+		5A1D73FC1DC8B2FC004130C1 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D73FB1DC8B2FC004130C1 /* Block.swift */; };
+		5A1D73FE1DC8B7EE004130C1 /* GameSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D73FD1DC8B7EE004130C1 /* GameSystem.swift */; };
 		5A1FB0B01DC7290D0074DD11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FB0AF1DC7290D0074DD11 /* AppDelegate.swift */; };
 		5A1FB0B21DC7290D0074DD11 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FB0B11DC7290D0074DD11 /* GameScene.sks */; };
 		5A1FB0B41DC7290D0074DD11 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FB0B31DC7290D0074DD11 /* Actions.sks */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A1D73F51DC8AA89004130C1 /* Fearless First.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fearless First.mp3"; sourceTree = "<group>"; };
+		5A1D73FB1DC8B2FC004130C1 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		5A1D73FD1DC8B7EE004130C1 /* GameSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSystem.swift; sourceTree = "<group>"; };
 		5A1FB0AC1DC7290D0074DD11 /* ColorBlind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorBlind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1FB0AF1DC7290D0074DD11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A1FB0B11DC7290D0074DD11 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -87,11 +93,14 @@
 		5A1FB0AE1DC7290D0074DD11 /* ColorBlind */ = {
 			isa = PBXGroup;
 			children = (
+				5A1D73F51DC8AA89004130C1 /* Fearless First.mp3 */,
 				5A1FB0AF1DC7290D0074DD11 /* AppDelegate.swift */,
 				5A1FB0B11DC7290D0074DD11 /* GameScene.sks */,
 				5A1FB0B31DC7290D0074DD11 /* Actions.sks */,
 				5A1FB0B51DC7290D0074DD11 /* GameScene.swift */,
 				5A1FB0B71DC7290D0074DD11 /* GameViewController.swift */,
+				5A1D73FB1DC8B2FC004130C1 /* Block.swift */,
+				5A1D73FD1DC8B7EE004130C1 /* GameSystem.swift */,
 				5A1FB0B91DC7290D0074DD11 /* Main.storyboard */,
 				5A1FB0BC1DC7290D0074DD11 /* Assets.xcassets */,
 				5A1FB0BE1DC7290D0074DD11 /* LaunchScreen.storyboard */,
@@ -173,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1FB0BB1DC7290D0074DD11 /* Main.storyboard in Resources */,
+				5A1D73F61DC8AA89004130C1 /* Fearless First.mp3 in Resources */,
 				5A1FB0B21DC7290D0074DD11 /* GameScene.sks in Resources */,
 				5A1FB0BD1DC7290D0074DD11 /* Assets.xcassets in Resources */,
 				5A1FB0C01DC7290D0074DD11 /* LaunchScreen.storyboard in Resources */,
@@ -236,6 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1FB0B61DC7290D0074DD11 /* GameScene.swift in Sources */,
+				5A1D73FC1DC8B2FC004130C1 /* Block.swift in Sources */,
+				5A1D73FE1DC8B7EE004130C1 /* GameSystem.swift in Sources */,
 				5A1FB0B81DC7290D0074DD11 /* GameViewController.swift in Sources */,
 				5A1FB0B01DC7290D0074DD11 /* AppDelegate.swift in Sources */,
 			);
