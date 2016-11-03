@@ -9,7 +9,17 @@ class GameScene: SKScene {
         bg = self.childNode(withName: "bg") as! SKSpriteNode
         
         gameSystem = GameSystem(scene: self)
-        let block = Block(gameSystem: gameSystem, colorCode: 0, lane: 0)
-        self.bg.addChild(block.node)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            if let collector = self.bg.nodes(at: touch.location(in: bg)).first as? CollectorNode {
+                if collector.colorCode >= gameSystem.colors.count - 1 {
+                    collector.colorCode = 0
+                } else {
+                    collector.colorCode += 1
+                }
+            }
+        }
     }
 }
