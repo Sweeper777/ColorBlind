@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
     }
 
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -47,5 +47,9 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .portrait
     }
 }
