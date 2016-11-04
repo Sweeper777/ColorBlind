@@ -94,7 +94,7 @@ class GameSystem {
                 let newBlockAction = SKAction.run {
                     _ = Block(gameSystem: self, colorCode: tuple.colorCode, lane: tuple.laneNumber)
                 }
-                let waitAction = SKAction.wait(forDuration: 0.7)
+                let waitAction = SKAction.wait(forDuration: Double.random(0.1, 0.4))
                 return SKAction.sequence([newBlockAction, waitAction])
             })
             scene.bg.run(SKAction.sequence(actionSequence))
