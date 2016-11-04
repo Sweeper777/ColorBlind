@@ -6,6 +6,7 @@ class GameSystem {
     weak var scene: GameScene?
     let blockPositions: [CGPoint]
     let collectorPositions: [CGPoint]
+    let scoreLabelPosition: CGPoint
     let colors: [UIColor]
     let fallToYPosition: CGFloat
     let numberOfLanes = 4
@@ -13,6 +14,11 @@ class GameSystem {
     var fallSpeed: TimeInterval = 4
     var collectors: [Collector] = []
     
+    var score: Int = 0 {
+        didSet {
+            scene?.scoreLabel.text = "\(score)"
+        }
+    }
     func onLanded(_ block: Block) {
         
     }
@@ -44,6 +50,8 @@ class GameSystem {
         colors.append(UIColor(hue: complement, saturation: 1.0, brightness: 1.0, alpha: 1.0))
         self.colors = colors
         
+        let scoreLabelPosition = CGPoint(x: scene.view!.w / 2, y: scene.view!.h / 3)
+        self.scoreLabelPosition = scene.bg.convert(scene.view!.convert(scoreLabelPosition, to: scene), from: scene)
         for i in 0..<numberOfLanes {
             collectors.append(Collector(gameSystem: self, lane: i))
         }
