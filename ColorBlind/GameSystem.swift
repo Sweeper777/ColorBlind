@@ -7,6 +7,7 @@ class GameSystem {
     let blockPositions: [CGPoint]
     let collectorPositions: [CGPoint]
     let scoreLabelPosition: CGPoint
+    let liveIndicatorPosition: CGPoint
     let colors: [UIColor]
     let fallToYPosition: CGFloat
     let numberOfLanes = 4
@@ -19,6 +20,13 @@ class GameSystem {
             scene?.scoreLabel.text = "\(score)"
         }
     }
+    
+    var lives: Int = 5 {
+        didSet {
+            scene?.liveIndicator.texture = SKTexture(imageNamed: "\(lives)lives")
+        }
+    }
+    
     func onLanded(_ block: Block) {
         
     }
@@ -52,6 +60,10 @@ class GameSystem {
         
         let scoreLabelPosition = CGPoint(x: scene.view!.w / 2, y: scene.view!.h / 3)
         self.scoreLabelPosition = scene.bg.convert(scene.view!.convert(scoreLabelPosition, to: scene), from: scene)
+        
+        let liveIndicatorPosition = CGPoint(x: scene.view!.w - 20, y: 20)
+        self.liveIndicatorPosition = scene.bg.convert(scene.view!.convert(liveIndicatorPosition, to: scene), from: scene)
+        
         for i in 0..<numberOfLanes {
             collectors.append(Collector(gameSystem: self, lane: i))
         }

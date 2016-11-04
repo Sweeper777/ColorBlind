@@ -4,6 +4,7 @@ class GameScene: SKScene {
     var bg: SKSpriteNode!
     var gameSystem: GameSystem!
     var scoreLabel: SKLabelNode!
+    var liveIndicator: SKSpriteNode!
     
     override func didMove(to view: SKView) {
         view.ignoresSiblingOrder = true
@@ -18,6 +19,12 @@ class GameScene: SKScene {
         scoreLabel.zPosition = 999
         scoreLabel.text = "0"
         bg.addChild(scoreLabel)
+        
+        liveIndicator = SKSpriteNode(imageNamed: "5lives")
+        liveIndicator.position = gameSystem.liveIndicatorPosition
+        liveIndicator.zPosition = 999
+        liveIndicator.anchorPoint = CGPoint(x: 1, y: 1)
+        bg.addChild(liveIndicator)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
