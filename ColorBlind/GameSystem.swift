@@ -28,7 +28,14 @@ class GameSystem {
     }
     
     func onLanded(_ block: Block) {
-        
+        let collector = collectors[block.lane]
+        if collector.node.colorCode == block.colorCode {
+            score += 1
+        } else {
+            if lives > 0 {
+                lives -= 1
+            }
+        }
     }
     
     init(scene: GameScene) {
