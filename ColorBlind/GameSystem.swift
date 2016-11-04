@@ -34,6 +34,9 @@ class GameSystem {
         } else {
             if lives > 0 {
                 lives -= 1
+                let colorise = SKAction.colorize(with: UIColor.red, colorBlendFactor: 1, duration: 0.2)
+                let decolorise = SKAction.colorize(withColorBlendFactor: 0, duration: 0.2)
+                scene?.bg.run(SKAction.sequence([colorise, decolorise]))
             }
         }
     }
