@@ -8,6 +8,27 @@ class GameScene: SKScene {
     var liveIndicator: SKSpriteNode!
     var pauseButton: ButtonNode!
     
+    lazy var pauseScreen: SKSpriteNode = {
+        let pauseBg = SKSpriteNode(imageNamed: "bg")
+        pauseBg.anchorPoint = CGPoint.zero
+        var viewCoords = CGPoint(x: 0, y: self.view!.h)
+        pauseBg.position = self.view!.convert(viewCoords, to: self)
+        pauseBg.zPosition = 2000
+        
+        let pauseLabel = SKLabelNode(fontNamed: "Copperplate")
+        viewCoords = CGPoint(x: self.view!.w / 2, y: self.view!.h / 5)
+        pauseLabel.position = pauseBg.convert(self.view!.convert(viewCoords, to: self), from: self)
+        pauseLabel.fontSize = 160
+        pauseLabel.fontColor = UIColor.white
+        pauseLabel.zPosition = 2001
+        pauseLabel.text = "PAUSED"
+        pauseBg.addChild(pauseLabel)
+        
+        pauseBg.alpha = 0
+        
+        return pauseBg
+    }()
+    
     override func didMove(to view: SKView) {
         view.ignoresSiblingOrder = true
         bg = self.childNode(withName: "bg") as! SKSpriteNode
