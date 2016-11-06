@@ -98,6 +98,36 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if bg.isPaused {
+            for child in pauseScreen.children {
+                child.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0.1))
+            }
+            
+            for touch in touches {
+                if let button = self.nodes(at: touch.location(in: self)).first as? ButtonNode {
+                    switch button.name! {
+                    case "resume":
+                        let unpause = SKAction.run { self.bg.isPaused = false }
+                        pauseScreen.run(SKAction.sequence([SKAction.fadeOut(withDuration: 0.3), SKAction.removeFromParent(), unpause]))
+                    case "restart":
+                        if let scene = GameScene(fileNamed: "GameScene") {
+                            scene.scaleMode = .aspectFill
+                            let transition = SKTransition.fade(withDuration: 0.5)
+                            view?.presentScene(scene, transition: transition)
+                            return
+                        }
+                    case "menu":
+                        if let scene = TitleScene(fileNamed: "TitleScene") {
+                            scene.scaleMode = .aspectFill
+                            let transition = SKTransition.fade(withDuration: 0.5)
+                            view?.presentScene(scene, transition: transition)
+                        }
+                    default:
+                        break
+                    }
+                    button.removeAllActions()
+                    button.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0))
+                }
+            }
         } else {
             pauseButton.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0.1))
             
