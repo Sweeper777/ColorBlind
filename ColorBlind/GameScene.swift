@@ -40,6 +40,13 @@ class GameScene: SKScene {
         restartButton.name = "restart"
         pauseBg.addChild(restartButton)
         
+        let mainMenuButton = ButtonNode(imageNamed: "menuButton")
+        mainMenuButton.position = CGPoint(x: bgCoords.x - 220, y: bgCoords.y)
+        mainMenuButton.size = CGSize(width: 200, height: 200)
+        mainMenuButton.zPosition = 2001
+        mainMenuButton.name = "menu"
+        pauseBg.addChild(mainMenuButton)
+        
         pauseBg.alpha = 0
         
         return pauseBg
