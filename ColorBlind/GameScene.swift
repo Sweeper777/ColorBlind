@@ -33,6 +33,13 @@ class GameScene: SKScene {
         resumeButton.name = "resume"
         pauseBg.addChild(resumeButton)
         
+        let restartButton = ButtonNode(imageNamed: "restartButton")
+        restartButton.position = CGPoint(x: bgCoords.x + 220, y: bgCoords.y)
+        restartButton.size = CGSize(width: 200, height: 200)
+        restartButton.zPosition = 2001
+        restartButton.name = "restart"
+        pauseBg.addChild(restartButton)
+        
         pauseBg.alpha = 0
         
         return pauseBg
