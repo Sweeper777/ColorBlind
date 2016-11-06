@@ -24,6 +24,15 @@ class GameScene: SKScene {
         pauseLabel.text = "PAUSED"
         pauseBg.addChild(pauseLabel)
         
+        let resumeButton = ButtonNode(imageNamed: "startbutton")
+        viewCoords = CGPoint(x: self.view!.w / 2, y: self.view!.h / 2)
+        let bgCoords = pauseBg.convert(self.view!.convert(viewCoords, to: self), from: self)
+        resumeButton.size = CGSize(width: 200, height: 200)
+        resumeButton.position = bgCoords
+        resumeButton.zPosition = 2001
+        resumeButton.name = "resume"
+        pauseBg.addChild(resumeButton)
+        
         pauseBg.alpha = 0
         
         return pauseBg
