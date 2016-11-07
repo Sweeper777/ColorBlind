@@ -40,5 +40,43 @@ class GameOverScene: SKScene {
         scoreLabel.text = "Score: \(score)"
         bg.addChild(scoreLabel)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            if let node = self.nodes(at: touch.location(in: self)).first as? ButtonNode {
+                let randomColor = UIColor(hue: CGFloat.random(), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+                node.run(SKAction.colorize(with: randomColor, colorBlendFactor: 0.7, duration: 0.1))
+            }
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for child in bg.children {
+            child.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0.1))
+        }
+        
+        for touch in touches {
+            if let button = self.nodes(at: touch.location(in: self)).first as? ButtonNode {
+                switch button.name! {
+                case "restart":
+                    if let scene = GameScene(fileNamed: "GameScene") {
+                        scene.scaleMode = .aspectFill
+                        let transition = SKTransition.fade(withDuration: 0.5)
+                        view?.presentScene(scene, transition: transition)
+                        return
+                    }
+                case "menu":
+                    if let scene = TitleScene(fileNamed: "TitleScene") {
+                        scene.scaleMode = .aspectFill
+                        let transition = SKTransition.fade(withDuration: 0.5)
+                        view?.presentScene(scene, transition: transition)
+                    }
+                default:
+                    break
+                }
+                button.removeAllActions()
+                button.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0))
+            }
+        }
     }
 }
