@@ -28,6 +28,9 @@
 		5A1FB0CA1DC72ADA0074DD11 /* EZSwiftExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1FB0C71DC72ADA0074DD11 /* EZSwiftExtensions.framework */; };
 		5A1FB0CB1DC72ADA0074DD11 /* HLSpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1FB0C81DC72ADA0074DD11 /* HLSpriteKit.framework */; };
 		5A1FB0CC1DC72ADA0074DD11 /* SwiftRandom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1FB0C91DC72ADA0074DD11 /* SwiftRandom.framework */; };
+		5AD6F6511DCE4DF700D14446 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6F6501DCE4DF700D14446 /* GameOverScene.sks */; };
+		5AD6F6531DCE4E3200D14446 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6F6521DCE4E3200D14446 /* GameOverScene.swift */; };
+		5AD6F6551DCF306300D14446 /* BlockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6F6541DCF306300D14446 /* BlockNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		5A1FB0C71DC72ADA0074DD11 /* EZSwiftExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EZSwiftExtensions.framework; path = "../../Library/Developer/Xcode/DerivedData/ColorBlind-bmdvcnmruigbbtdosesbckjaorfs/Build/Products/Debug-iphonesimulator/EZSwiftExtensions/EZSwiftExtensions.framework"; sourceTree = "<group>"; };
 		5A1FB0C81DC72ADA0074DD11 /* HLSpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HLSpriteKit.framework; path = "Pods/../build/Debug-iphoneos/HLSpriteKit/HLSpriteKit.framework"; sourceTree = "<group>"; };
 		5A1FB0C91DC72ADA0074DD11 /* SwiftRandom.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftRandom.framework; path = "../../Library/Developer/Xcode/DerivedData/ColorBlind-bmdvcnmruigbbtdosesbckjaorfs/Build/Products/Debug-iphonesimulator/SwiftRandom/SwiftRandom.framework"; sourceTree = "<group>"; };
+		5AD6F6501DCE4DF700D14446 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
+		5AD6F6521DCE4E3200D14446 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		5AD6F6541DCF306300D14446 /* BlockNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
 		8745C6540F621BDF0E82041C /* Pods-ColorBlind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorBlind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ColorBlind/Pods-ColorBlind.debug.xcconfig"; sourceTree = "<group>"; };
 		A0757E737E171E289CE62865 /* Pods-ColorBlind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorBlind.release.xcconfig"; path = "Pods/Target Support Files/Pods-ColorBlind/Pods-ColorBlind.release.xcconfig"; sourceTree = "<group>"; };
 		E1721E796604AF0637C75DBF /* Pods_ColorBlind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorBlind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +118,8 @@
 				5A1FB0B51DC7290D0074DD11 /* GameScene.swift */,
 				5A1D44831DCC9E3F0059BC28 /* TitleScene.sks */,
 				5A1D44851DCC9EC80059BC28 /* TitleScene.swift */,
+				5AD6F6501DCE4DF700D14446 /* GameOverScene.sks */,
+				5AD6F6521DCE4E3200D14446 /* GameOverScene.swift */,
 				5A1FB0B31DC7290D0074DD11 /* Actions.sks */,
 				5A1FB0B71DC7290D0074DD11 /* GameViewController.swift */,
 				5A1D73FB1DC8B2FC004130C1 /* Block.swift */,
@@ -119,6 +127,7 @@
 				5A1BA52E1DCA00F400C03989 /* CollectorNode.swift */,
 				5A1D73FD1DC8B7EE004130C1 /* GameSystem.swift */,
 				5A1D44871DCCABDE0059BC28 /* ButtonNode.swift */,
+				5AD6F6541DCF306300D14446 /* BlockNode.swift */,
 				5A1FB0B91DC7290D0074DD11 /* Main.storyboard */,
 				5A1FB0BC1DC7290D0074DD11 /* Assets.xcassets */,
 				5A1FB0BE1DC7290D0074DD11 /* LaunchScreen.storyboard */,
@@ -206,6 +215,7 @@
 				5A1FB0C01DC7290D0074DD11 /* LaunchScreen.storyboard in Resources */,
 				5A1D44841DCC9E3F0059BC28 /* TitleScene.sks in Resources */,
 				5A1FB0B41DC7290D0074DD11 /* Actions.sks in Resources */,
+				5AD6F6511DCE4DF700D14446 /* GameOverScene.sks in Resources */,
 				5A1D44821DCC9A2D0059BC28 /* ting.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AD6F6531DCE4E3200D14446 /* GameOverScene.swift in Sources */,
+				5AD6F6551DCF306300D14446 /* BlockNode.swift in Sources */,
 				5A1BA52F1DCA00F400C03989 /* CollectorNode.swift in Sources */,
 				5A1FB0B61DC7290D0074DD11 /* GameScene.swift in Sources */,
 				5A1D73FC1DC8B2FC004130C1 /* Block.swift in Sources */,
