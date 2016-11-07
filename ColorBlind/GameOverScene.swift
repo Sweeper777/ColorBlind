@@ -24,5 +24,12 @@ class GameOverScene: SKScene {
         restartButton.zPosition = 2001
         restartButton.name = "restart"
         bg.addChild(restartButton)
+        
+        let mainMenuButton = ButtonNode(imageNamed: "menuButton")
+        mainMenuButton.position = CGPoint(x: bgCoords.x - 220, y: bgCoords.y)
+        mainMenuButton.size = CGSize(width: 200, height: 200)
+        mainMenuButton.zPosition = 2001
+        mainMenuButton.name = "menu"
+        bg.addChild(mainMenuButton)
     }
 }
