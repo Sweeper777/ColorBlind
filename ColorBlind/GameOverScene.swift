@@ -31,5 +31,14 @@ class GameOverScene: SKScene {
         mainMenuButton.zPosition = 2001
         mainMenuButton.name = "menu"
         bg.addChild(mainMenuButton)
+        
+        let scoreLabel = SKLabelNode(fontNamed: "Copperplate")
+        scoreLabel.position = CGPoint(x: bgCoords.x, y: bgCoords.y + 200)
+        scoreLabel.fontSize = 50
+        scoreLabel.fontColor = UIColor.white
+        scoreLabel.zPosition = 2001
+        scoreLabel.text = "Score: \(score)"
+        bg.addChild(scoreLabel)
+    }
     }
 }
