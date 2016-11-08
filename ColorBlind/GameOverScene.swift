@@ -1,7 +1,7 @@
 import SpriteKit
 
 class GameOverScene: SKScene {
-    var score: Int = 0
+    var score = 0
     var bg: SKSpriteNode!
     
     override func didMove(to view: SKView) {
@@ -33,7 +33,8 @@ class GameOverScene: SKScene {
         bg.addChild(mainMenuButton)
         
         let scoreLabel = SKLabelNode(fontNamed: "Copperplate")
-        scoreLabel.position = CGPoint(x: bgCoords.x, y: bgCoords.y + 200)
+        scoreLabel.position = bg.convert(self.view!.convert(CGPoint(x: viewCoords.x, y: viewCoords.y + view.h / 9), to: self), from: self)
+        
         scoreLabel.fontSize = 50
         scoreLabel.fontColor = UIColor.white
         scoreLabel.zPosition = 2001
