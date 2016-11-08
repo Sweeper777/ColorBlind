@@ -3,6 +3,7 @@ import SpriteKit
 class GameOverScene: SKScene {
     var score = 0
     var highscore = 0
+    var newHighscore = false
     var bg: SKSpriteNode!
     
     override func didMove(to view: SKView) {
@@ -50,6 +51,15 @@ class GameOverScene: SKScene {
         highscoreLabel.text = "Highcore: \(highscore)"
         bg.addChild(highscoreLabel)
         
+        if newHighscore {
+            let newHighscoreLabel = SKLabelNode(fontNamed: "Copperplate")
+            newHighscoreLabel.position = bg.convert(self.view!.convert(CGPoint(x: viewCoords.x, y: viewCoords.y + view.h / 3), to: self), from: self)
+            newHighscoreLabel.fontSize = 50
+            newHighscoreLabel.fontColor = UIColor.white
+            newHighscoreLabel.zPosition = 2001
+            newHighscoreLabel.text = "NEW HIGHSCORE!"
+            bg.addChild(newHighscoreLabel)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
