@@ -24,6 +24,16 @@ class GameSystem {
         }
     }
     
+    var highscore: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "highscore")
+        }
+        
+        set {
+            UserDefaults.standard.set(newValue, forKey: "highscore")
+        }
+    }
+    
     var lives: Int = 5 {
         didSet {
             scene?.liveIndicator.texture = SKTexture(imageNamed: "\(lives)lives")
