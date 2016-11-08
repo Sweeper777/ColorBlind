@@ -18,6 +18,9 @@ class GameSystem {
     var score: Int = 0 {
         didSet {
             scene?.scoreLabel.text = "\(score)"
+            if score < 200 {
+                fallSpeed = 4 - Double(score) / 100.0
+            }
         }
     }
     
