@@ -51,6 +51,23 @@ class GameSystem {
                 let colorise = SKAction.colorize(with: UIColor.red, colorBlendFactor: 1, duration: 0.2)
                 let decolorise = SKAction.colorize(withColorBlendFactor: 0, duration: 0.2)
                 scene?.bg.run(SKAction.sequence([colorise, decolorise]))
+                
+                if lives == 0 {
+                    self.scene?.bg.isPaused = true
+                    if let scene = GameOverScene(fileNamed: "GameOverScene") {
+                        scene.scaleMode = .aspectFill
+                        
+                        if score > highscore {
+                            highscore = score
+                            scene.newHighscore = true
+                        }
+                        scene.score = score
+                        scene.highscore = highscore
+                        let transition = SKTransition.fade(withDuration: 1)
+                        self.scene?.gameSystem = nil
+                        self.scene?.view?.presentScene(scene, transition: transition)
+                    }
+                }
             }
         }
     }
