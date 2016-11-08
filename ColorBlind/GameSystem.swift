@@ -80,6 +80,7 @@ class GameSystem {
         }
         
         let newBlockClosure = {
+            [unowned self] in
             var newBlocks = [(laneNumber: Int, colorCode: Int)]()
             let randomNumber = Int.random(0, 9)
             if randomNumber < 8 {
@@ -96,6 +97,7 @@ class GameSystem {
             
             let actionSequence = newBlocks.map({ tuple -> SKAction in
                 let newBlockAction = SKAction.run {
+                    [unowned self] in
                     _ = Block(gameSystem: self, colorCode: tuple.colorCode, lane: tuple.laneNumber)
                 }
                 let waitAction = SKAction.wait(forDuration: Double.random(0.1, 0.4))
@@ -107,5 +109,12 @@ class GameSystem {
         let waitAction = SKAction.wait(forDuration: 1.5)
         let finalAction = SKAction.repeatForever(SKAction.sequence([waitAction, SKAction.run(newBlockClosure)]))
         scene.bg.run(finalAction)
+    }
+    
+    deinit {
+        for child in (scene!.bg.children) {
+            child.removeAllActions()
+            child.removeFromParent()
+        }
     }
 }

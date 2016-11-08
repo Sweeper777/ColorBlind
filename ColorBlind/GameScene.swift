@@ -8,7 +8,9 @@ class GameScene: SKScene {
     var liveIndicator: SKSpriteNode!
     var pauseButton: ButtonNode!
     
-    lazy var pauseScreen: SKSpriteNode = {
+    var pauseScreen: SKSpriteNode!
+        
+    func initPauseScreen() {
         let pauseBg = SKSpriteNode(imageNamed: "bg")
         pauseBg.anchorPoint = CGPoint.zero
         var viewCoords = CGPoint(x: 0, y: self.view!.h)
@@ -49,8 +51,8 @@ class GameScene: SKScene {
         
         pauseBg.alpha = 0
         
-        return pauseBg
-    }()
+        pauseScreen = pauseBg
+    }
     
     override func didMove(to view: SKView) {
         view.ignoresSiblingOrder = true
@@ -72,6 +74,7 @@ class GameScene: SKScene {
         liveIndicator.anchorPoint = CGPoint(x: 1, y: 1)
         bg.addChild(liveIndicator)
         
+        initPauseScreen()
         pauseButton = ButtonNode(imageNamed: "pauseButton")
         let viewCoords = CGPoint(x: 10, y: 10)
         pauseButton.position = self.bg.convert(view.convert(viewCoords, to: self), from: self)
@@ -106,12 +109,13 @@ class GameScene: SKScene {
                 if let button = self.nodes(at: touch.location(in: self)).first as? ButtonNode {
                     switch button.name! {
                     case "resume":
-                        let unpause = SKAction.run { self.bg.isPaused = false }
+                        let unpause = SKAction.run { [unowned self] in self.bg.isPaused = false }
                         pauseScreen.run(SKAction.sequence([SKAction.fadeOut(withDuration: 0.3), SKAction.removeFromParent(), unpause]))
                     case "restart":
                         if let scene = GameScene(fileNamed: "GameScene") {
                             scene.scaleMode = .aspectFill
                             let transition = SKTransition.fade(withDuration: 0.5)
+                            gameSystem = nil
                             view?.presentScene(scene, transition: transition)
                             return
                         }
@@ -119,6 +123,7 @@ class GameScene: SKScene {
                         if let scene = TitleScene(fileNamed: "TitleScene") {
                             scene.scaleMode = .aspectFill
                             let transition = SKTransition.fade(withDuration: 0.5)
+                            gameSystem = nil
                             view?.presentScene(scene, transition: transition)
                         }
                     default:
