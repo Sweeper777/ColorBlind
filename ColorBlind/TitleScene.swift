@@ -24,6 +24,16 @@ class TitleScene: SKScene {
         startButton.position = self.bg.convert(view.convert(viewCoords, to: self), from: self)
         startButton.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         bg.addChild(startButton)
+        
+        let highscoreLabel = SKLabelNode(fontNamed: "Copperplate")
+        viewCoords = CGPoint(x: 20, y: view.h * 0.95)
+        highscoreLabel.position = self.bg.convert(view.convert(viewCoords, to: self), from: self)
+        highscoreLabel.horizontalAlignmentMode = .left
+        highscoreLabel.fontSize = 50
+        highscoreLabel.fontColor = UIColor.white
+        highscoreLabel.zPosition = 2001
+        highscoreLabel.text = "Highcore: \(UserDefaults.standard.integer(forKey: "highscore"))"
+        bg.addChild(highscoreLabel)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
