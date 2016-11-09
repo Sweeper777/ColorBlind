@@ -136,7 +136,7 @@ class GameSystem {
             scene.bg.run(SKAction.sequence(actionSequence))
         }
         
-        let waitAction = SKAction.wait(forDuration: 1.5)
+        let waitAction = SKAction.wait(forDuration: 1.3)
         let finalAction = SKAction.repeatForever(SKAction.sequence([waitAction, SKAction.run(newBlockClosure)]))
         scene.bg.run(finalAction)
     }
