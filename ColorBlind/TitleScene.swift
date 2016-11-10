@@ -6,6 +6,7 @@ class TitleScene: SKScene {
     var bg: SKSpriteNode!
     var startButton: ButtonNode!
     var bgmButton: ButtonNode!
+    var soundEffectButton: ButtonNode!
     
     override func didMove(to view: SKView) {
         bg = self.childNode(withName: "bg") as! SKSpriteNode
@@ -45,6 +46,15 @@ class TitleScene: SKScene {
         bgmButton.anchorPoint = CGPoint(x: 0, y: 1)
         bgmButton.size = CGSize(width: 100, height: 100)
         bg.addChild(bgmButton)
+        
+        let soundEffectsOn = !UserDefaults.standard.bool(forKey: "soundEffects")
+        soundEffectButton = ButtonNode(imageNamed: "soundEffects_\(soundEffectsOn)")
+        soundEffectButton.zPosition = 1000
+        viewCoords = CGPoint.zero
+        soundEffectButton.position = CGPoint(x: bgmButton.position.x + bgmButton.frame.w + 30, y: bgmButton.position.y)
+        soundEffectButton.anchorPoint = CGPoint(x: 0, y: 1)
+        soundEffectButton.size = CGSize(width: 100, height: 100)
+        bg.addChild(soundEffectButton)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
