@@ -15,11 +15,20 @@ class GameSystem {
     var fallSpeed: TimeInterval = 4
     var collectors: [Collector] = []
     
+    var newBlockClosure: (() -> Void)!
+    
     var score: Int = 0 {
         didSet {
             scene?.scoreLabel.text = "\(score)"
             if score < 200 {
                 fallSpeed = 4 - Double(score) / 80
+            }
+            
+            if score == 100 {
+                scene?.bg.removeAllActions()
+                let waitAction = SKAction.wait(forDuration: 1.2)
+                let finalAction = SKAction.repeatForever(SKAction.sequence([waitAction, SKAction.run(newBlockClosure)]))
+                scene?.bg.run(finalAction)
             }
         }
     }
@@ -109,7 +118,7 @@ class GameSystem {
             collectors.append(Collector(gameSystem: self, lane: i))
         }
         
-        let newBlockClosure = {
+        newBlockClosure = {
             [unowned self] in
             var newBlocks = [(laneNumber: Int, colorCode: Int)]()
             let randomNumber = Int.random(0, 9)
@@ -130,7 +139,7 @@ class GameSystem {
                     [unowned self] in
                     _ = Block(gameSystem: self, colorCode: tuple.colorCode, lane: tuple.laneNumber)
                 }
-                let waitAction = SKAction.wait(forDuration: Double.random(0.1, 0.4))
+                let waitAction = SKAction.wait(forDuration: Double.random(0.05, 0.3))
                 return SKAction.sequence([newBlockAction, waitAction])
             })
             scene.bg.run(SKAction.sequence(actionSequence))
