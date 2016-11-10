@@ -5,6 +5,7 @@ import SwiftRandom
 class TitleScene: SKScene {
     var bg: SKSpriteNode!
     var startButton: ButtonNode!
+    var bgmButton: ButtonNode!
     
     override func didMove(to view: SKView) {
         bg = self.childNode(withName: "bg") as! SKSpriteNode
@@ -34,6 +35,16 @@ class TitleScene: SKScene {
         highscoreLabel.zPosition = 2001
         highscoreLabel.text = "Highcore: \(UserDefaults.standard.integer(forKey: "highscore"))"
         bg.addChild(highscoreLabel)
+        
+        let bgmOn = !UserDefaults.standard.bool(forKey: "bgm")
+        bgmButton = ButtonNode(imageNamed: "bgm_\(bgmOn)")
+        bgmButton.zPosition = 1000
+        viewCoords = CGPoint.zero
+        let bgCoords = self.bg.convert(view.convert(viewCoords, to: self), from: self)
+        bgmButton.position = CGPoint(x: bgCoords.x + 30, y: bgCoords.y - 30)
+        bgmButton.anchorPoint = CGPoint(x: 0, y: 1)
+        bgmButton.size = CGSize(width: 100, height: 100)
+        bg.addChild(bgmButton)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
