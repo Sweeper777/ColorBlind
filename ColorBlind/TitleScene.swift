@@ -81,6 +81,9 @@ class TitleScene: SKScene {
                 let bgm = UserDefaults.standard.bool(forKey: "bgm")
                 UserDefaults.standard.set(!bgm, forKey: "bgm")
                 bgmButton.texture = SKTexture(imageNamed: "bgm_\(bgm)")
+                if let vc = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController as? GameViewController {
+                    vc.audioPlayer.volume = bgm ? 1.0 : 0.0
+                }
             } else if node == soundEffectButton {
                 let soundEffects = UserDefaults.standard.bool(forKey: "soundEffects")
                 UserDefaults.standard.set(!soundEffects, forKey: "soundEffects")
