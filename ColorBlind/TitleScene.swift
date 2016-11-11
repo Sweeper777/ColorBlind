@@ -61,18 +61,14 @@ class TitleScene: SKScene {
         for touch in touches {
             if let node = self.nodes(at: touch.location(in: self)).first as? ButtonNode {
                 let randomColor = UIColor(hue: CGFloat.random(), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+                node.removeAllActions()
                 node.run(SKAction.colorize(with: randomColor, colorBlendFactor: 0.7, duration: 0.1))
             }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for child in bg.children {
-                child.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0.1))
-        }
-        
         for touch in touches {
-            if self.nodes(at: touch.location(in: self)).first == startButton {
             let node = self.nodes(at: touch.location(in: self)).first
             if node == startButton {
                 if let scene = GameScene(fileNamed: "GameScene") {
@@ -90,6 +86,10 @@ class TitleScene: SKScene {
                 UserDefaults.standard.set(!soundEffects, forKey: "soundEffects")
                 soundEffectButton.texture = SKTexture(imageNamed: "soundEffects_\(soundEffects)")
             }
+        }
+        for child in bg.children {
+            child.removeAllActions()
+            child.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0.1))
         }
     }
 }
