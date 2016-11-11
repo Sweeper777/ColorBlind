@@ -73,12 +73,22 @@ class TitleScene: SKScene {
         
         for touch in touches {
             if self.nodes(at: touch.location(in: self)).first == startButton {
+            let node = self.nodes(at: touch.location(in: self)).first
+            if node == startButton {
                 if let scene = GameScene(fileNamed: "GameScene") {
                     scene.scaleMode = .aspectFill
                     let transition = SKTransition.fade(withDuration: 0.5)
                     view?.presentScene(scene, transition: transition)
                     return
                 }
+            } else if node == bgmButton {
+                let bgm = UserDefaults.standard.bool(forKey: "bgm")
+                UserDefaults.standard.set(!bgm, forKey: "bgm")
+                bgmButton.texture = SKTexture(imageNamed: "bgm_\(bgm)")
+            } else if node == soundEffectButton {
+                let soundEffects = UserDefaults.standard.bool(forKey: "soundEffects")
+                UserDefaults.standard.set(!soundEffects, forKey: "soundEffects")
+                soundEffectButton.texture = SKTexture(imageNamed: "soundEffects_\(soundEffects)")
             }
         }
     }
