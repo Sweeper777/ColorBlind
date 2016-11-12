@@ -53,7 +53,9 @@ class GameSystem {
         let collector = collectors[block.lane]
         if collector.node.colorCode == block.colorCode {
             score += 1
-            collector.node.run(SKAction.playSoundFileNamed("ting.wav", waitForCompletion: false))
+            if !UserDefaults.standard.bool(forKey: "soundEffects") {
+                collector.node.run(SKAction.playSoundFileNamed("ting.wav", waitForCompletion: false))
+            }
         } else {
             if lives > 0 {
                 lives -= 1
