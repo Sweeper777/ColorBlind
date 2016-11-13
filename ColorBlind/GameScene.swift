@@ -95,6 +95,9 @@ class GameScene: SKScene {
             } else if let node = self.nodes(at: touch.location(in: self)).first as? ButtonNode {
                 let randomColor = UIColor(hue: CGFloat.random(), saturation: 1.0, brightness: 1.0, alpha: 1.0)
                 node.run(SKAction.colorize(with: randomColor, colorBlendFactor: 0.7, duration: 0.1))
+                if !UserDefaults.standard.bool(forKey: "soundEffects") {
+                    node.run(SKAction.playSoundFileNamed("ting.wav", waitForCompletion: false))
+                }
             }
         }
     }
