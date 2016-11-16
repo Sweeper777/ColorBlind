@@ -10,7 +10,7 @@ class GameSystem {
     let liveIndicatorPosition: CGPoint
     let colors: [UIColor]
     let fallToYPosition: CGFloat
-    let numberOfLanes = 4
+    let numberOfLanes = 5
     let laneWidth: CGFloat
     var fallSpeed: TimeInterval = 4
     var collectors: [Collector] = []
