@@ -32,6 +32,14 @@ class SettingsScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let node = self.nodes(at: touch.location(in: self)).first
+            if node == backButton {
+                if let scene = TitleScene(fileNamed: "TitleScene") {
+                    scene.scaleMode = .aspectFill
+                    let transition = SKTransition.fade(withDuration: 0.5)
+                    view?.presentScene(scene, transition: transition)
+                    return
+                }
+            }
         }
         for child in bg.children {
             child.removeAllActions()
