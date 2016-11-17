@@ -15,6 +15,29 @@ class SettingsScene: SKScene {
         backButton.size = CGSize(width: 100, height: 100)
         bg.addChild(backButton)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            if let node = self.nodes(at: touch.location(in: self)).first as? ButtonNode {
+                let randomColor = UIColor(hue: CGFloat.random(), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+                node.removeAllActions()
+                node.run(SKAction.colorize(with: randomColor, colorBlendFactor: 0.7, duration: 0.1))
+                if !UserDefaults.standard.bool(forKey: "soundEffects") {
+                    node.run(SKAction.playSoundFileNamed("ting.wav", waitForCompletion: false))
+                }
+            }
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let node = self.nodes(at: touch.location(in: self)).first
+        }
+        for child in bg.children {
+            child.removeAllActions()
+            child.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0.1))
+        }
+    }
 }
 
 
