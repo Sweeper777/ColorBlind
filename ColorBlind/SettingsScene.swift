@@ -2,8 +2,18 @@ import SpriteKit
 
 class SettingsScene: SKScene {
     var bg: SKSpriteNode!
+    var backButton: ButtonNode!
+    
     override func didMove(to view: SKView) {
         bg = self.childNode(withName: "bg") as! SKSpriteNode
+        
+        backButton = ButtonNode(imageNamed: "backButton")
+        backButton.zPosition = 1000
+        let bgCoords = self.bg.convert(view.convert(CGPoint.zero, to: self), from: self)
+        backButton.position = CGPoint(x: bgCoords.x + 30, y: bgCoords.y - 30)
+        backButton.anchorPoint = CGPoint(x: 0, y: 1)
+        backButton.size = CGSize(width: 100, height: 100)
+        bg.addChild(backButton)
     }
 }
 
