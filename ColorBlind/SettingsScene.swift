@@ -46,6 +46,11 @@ class SettingsScene: SKScene {
             child.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0.1))
         }
     }
+    
+    func getBgPosition(row: Int) -> CGPoint {
+        let viewCoords = CGPoint(x: view!.w / 2, y: view!.h * (CGFloat(row) / 10.0))
+        return self.bg.convert(view!.convert(viewCoords, to: self), from: self)
+    }
 }
 
 
