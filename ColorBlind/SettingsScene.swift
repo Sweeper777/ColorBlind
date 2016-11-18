@@ -3,6 +3,7 @@ import SpriteKit
 class SettingsScene: SKScene {
     var bg: SKSpriteNode!
     var backButton: ButtonNode!
+    var bgmButton: ButtonNode!
     
     override func didMove(to view: SKView) {
         bg = self.childNode(withName: "bg") as! SKSpriteNode
@@ -14,6 +15,15 @@ class SettingsScene: SKScene {
         backButton.anchorPoint = CGPoint(x: 0, y: 1)
         backButton.size = CGSize(width: 100, height: 100)
         bg.addChild(backButton)
+        
+        let bgmOn = !UserDefaults.standard.bool(forKey: "bgm")
+        bgmButton = ButtonNode(imageNamed: "bgm_\(bgmOn)")
+        bgmButton.zPosition = 1000
+        bgmButton.position = getBgPosition(row: 2)
+        bgmButton.anchorPoint = CGPoint(x: 0.5, y: 1)
+        bgmButton.size = CGSize(width: 200, height: 200)
+        bg.addChild(bgmButton)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
