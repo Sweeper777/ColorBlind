@@ -28,7 +28,7 @@ class SettingsScene: SKScene {
         let soundEffectsOn = !UserDefaults.standard.bool(forKey: "soundEffects")
         soundEffectButton = ButtonNode(imageNamed: "soundEffects_\(soundEffectsOn)")
         soundEffectButton.zPosition = 1000
-        soundEffectButton.position = getBgPosition(row: 3)
+        soundEffectButton.position = getBgPosition(row: 5)
         soundEffectButton.anchorPoint = CGPoint(x: 0.5, y: 1)
         soundEffectButton.size = CGSize(width: 200, height: 200)
         bg.addChild(soundEffectButton)
@@ -70,14 +70,14 @@ class SettingsScene: SKScene {
                 soundEffectButton.texture = SKTexture(imageNamed: "soundEffects_\(soundEffects)")
             }
         }
-        for child in bg.children {
+        for child in bg.children where child is ButtonNode {
             child.removeAllActions()
             child.run(SKAction.colorize(withColorBlendFactor: 0, duration: 0.1))
         }
     }
     
     func getBgPosition(row: Int) -> CGPoint {
-        let viewCoords = CGPoint(x: view!.w / 2, y: view!.h * (CGFloat(row) / 10.0))
+        let viewCoords = CGPoint(x: view!.w / 2, y: view!.h * (CGFloat(row) / 20.0))
         return self.bg.convert(view!.convert(viewCoords, to: self), from: self)
     }
 }
