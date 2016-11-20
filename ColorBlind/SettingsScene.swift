@@ -7,6 +7,7 @@ class SettingsScene: SKScene {
     var soundEffectButton: ButtonNode!
     
     var easyButton: SKSpriteNode!
+    var normalButton: SKSpriteNode!
     override func didMove(to view: SKView) {
         bg = self.childNode(withName: "bg") as! SKSpriteNode
         
@@ -46,6 +47,12 @@ class SettingsScene: SKScene {
         easyButton.position = getBgPosition(row: 11)
         easyButton.anchorPoint = CGPoint(x: 0.5, y: 1)
         bg.addChild(easyButton)
+        
+        normalButton = SKSpriteNode(imageNamed: "normalButton")
+        normalButton.zPosition = 1000
+        normalButton.position = getBgPosition(row: 12)
+        normalButton.anchorPoint = CGPoint(x: 0.5, y: 1)
+        bg.addChild(normalButton)
         
     }
     
