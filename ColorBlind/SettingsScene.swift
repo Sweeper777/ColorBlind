@@ -101,6 +101,12 @@ class SettingsScene: SKScene {
                 if !UserDefaults.standard.bool(forKey: "soundEffects") {
                     btnNode.run(SKAction.playSoundFileNamed("ting.wav", waitForCompletion: false))
                 }
+            } else if node == easyButton {
+                selectDifficulty(-1)
+            } else if node == normalButton {
+                selectDifficulty(0)
+            } else if node == hardButton {
+                selectDifficulty(1)
             }
         }
     }
