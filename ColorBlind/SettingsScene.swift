@@ -8,6 +8,8 @@ class SettingsScene: SKScene {
     
     var easyButton: SKSpriteNode!
     var normalButton: SKSpriteNode!
+    var hardButton: SKSpriteNode!
+    
     override func didMove(to view: SKView) {
         bg = self.childNode(withName: "bg") as! SKSpriteNode
         
@@ -53,6 +55,12 @@ class SettingsScene: SKScene {
         normalButton.position = getBgPosition(row: 12)
         normalButton.anchorPoint = CGPoint(x: 0.5, y: 1)
         bg.addChild(normalButton)
+        
+        hardButton = SKSpriteNode(imageNamed: "hardButton")
+        hardButton.zPosition = 1000
+        hardButton.position = getBgPosition(row: 13)
+        hardButton.anchorPoint = CGPoint(x: 0.5, y: 1)
+        bg.addChild(hardButton)
         
     }
     
