@@ -32,6 +32,13 @@ class SettingsScene: SKScene {
         soundEffectButton.anchorPoint = CGPoint(x: 0.5, y: 1)
         soundEffectButton.size = CGSize(width: 200, height: 200)
         bg.addChild(soundEffectButton)
+        
+        let difficultyLabel = SKLabelNode(text: "DIFFICULTY")
+        difficultyLabel.zPosition = 1000
+        difficultyLabel.fontName = "Copperplate"
+        difficultyLabel.fontSize = 60
+        difficultyLabel.position = getBgPosition(row: 10)
+        bg.addChild(difficultyLabel)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
