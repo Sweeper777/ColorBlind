@@ -62,6 +62,33 @@ class SettingsScene: SKScene {
         hardButton.anchorPoint = CGPoint(x: 0.5, y: 1)
         bg.addChild(hardButton)
         
+        selectDifficulty(UserDefaults.standard.integer(forKey: "difficulty"))
+    }
+    
+    func selectDifficulty(_ difficulty: Int) {
+        UserDefaults.standard.set(difficulty, forKey: "difficulty")
+        let randomColor = UIColor(hue: CGFloat.random(), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+        let colorize = SKAction.colorize(with: randomColor, colorBlendFactor: 0.7, duration: 0.1)
+        let decolorize = SKAction.colorize(withColorBlendFactor: 0, duration: 0.1)
+        easyButton.removeAllActions()
+        normalButton.removeAllActions()
+        hardButton.removeAllActions()
+        switch difficulty {
+        case -1:
+            easyButton.run(colorize)
+            normalButton.run(decolorize)
+            hardButton.run(decolorize)
+        case 0:
+            easyButton.run(decolorize)
+            normalButton.run(colorize)
+            hardButton.run(decolorize)
+        case 1:
+            easyButton.run(decolorize)
+            normalButton.run(decolorize)
+            hardButton.run(colorize)
+        default:
+            fatalError()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
