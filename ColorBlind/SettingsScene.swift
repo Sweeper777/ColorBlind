@@ -6,6 +6,7 @@ class SettingsScene: SKScene {
     var bgmButton: ButtonNode!
     var soundEffectButton: ButtonNode!
     
+    var easyButton: SKSpriteNode!
     override func didMove(to view: SKView) {
         bg = self.childNode(withName: "bg") as! SKSpriteNode
         
@@ -39,6 +40,13 @@ class SettingsScene: SKScene {
         difficultyLabel.fontSize = 60
         difficultyLabel.position = getBgPosition(row: 10)
         bg.addChild(difficultyLabel)
+        
+        easyButton = SKSpriteNode(imageNamed: "easyButton")
+        easyButton.zPosition = 1000
+        easyButton.position = getBgPosition(row: 11)
+        easyButton.anchorPoint = CGPoint(x: 0.5, y: 1)
+        bg.addChild(easyButton)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
