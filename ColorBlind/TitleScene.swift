@@ -1,6 +1,7 @@
 import SpriteKit
 import EZSwiftExtensions
 import SwiftRandom
+import NORLabelNode
 
 class TitleScene: SKScene {
     var bg: SKSpriteNode!
@@ -26,8 +27,8 @@ class TitleScene: SKScene {
         startButton.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         bg.addChild(startButton)
         
-        let highscoreLabel = SKLabelNode(fontNamed: "Copperplate")
-        viewCoords = CGPoint(x: 20, y: view.h * 0.95)
+        let highscoreLabel = NORLabelNode(fontNamed: "Copperplate")
+        viewCoords = CGPoint(x: 20, y: view.h * 0.92)
         highscoreLabel.position = self.bg.convert(view.convert(viewCoords, to: self), from: self)
         highscoreLabel.horizontalAlignmentMode = .left
         highscoreLabel.fontSize = 50
