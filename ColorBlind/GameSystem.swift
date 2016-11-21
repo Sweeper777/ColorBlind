@@ -35,11 +35,11 @@ class GameSystem {
     
     var highscore: Int {
         get {
-            return UserDefaults.standard.integer(forKey: "highscore")
+            return UserDefaults.standard.integer(forKey: "highscore\(highscoreKey)")
         }
         
         set {
-            UserDefaults.standard.set(newValue, forKey: "highscore")
+            UserDefaults.standard.set(newValue, forKey: "highscore\(highscoreKey)")
         }
     }
     
