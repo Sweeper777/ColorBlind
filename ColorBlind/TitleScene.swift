@@ -33,7 +33,7 @@ class TitleScene: SKScene {
         highscoreLabel.fontSize = 50
         highscoreLabel.fontColor = UIColor.white
         highscoreLabel.zPosition = 2001
-        highscoreLabel.text = "Highscore: \(UserDefaults.standard.integer(forKey: "highscore"))"
+        highscoreLabel.text = "Highscore (Easy): \(UserDefaults.standard.integer(forKey: "highscoreEasy"))\nHighscore (Normal): \(UserDefaults.standard.integer(forKey: "highscore"))\nHighscore (Hard): \(UserDefaults.standard.integer(forKey: "highscoreHard"))"
         bg.addChild(highscoreLabel)
         
         settingsButton = ButtonNode(imageNamed: "settingsButton")
