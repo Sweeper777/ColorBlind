@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1421E63D723A18F543E94AD7942C3CF1'
-               BlueprintName = 'HLSpriteKit'
+               BlueprintIdentifier = '044476E46E6C8C6280B392870A7B7B52'
+               BlueprintName = 'NORLabelNode'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'HLSpriteKit.framework'>
+               BuildableName = 'NORLabelNode.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NORLabelNode.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ColorBlind.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1421E63D723A18F543E94AD7942C3CF1</key>
+		<key>044476E46E6C8C6280B392870A7B7B52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A823EF7B1ACAF0ED541C12C7C94A831</key>
+		<key>08AAF1065F18931BDFBFA01C319642E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1421E63D723A18F543E94AD7942C3CF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7466AA3A56BE0ADE3DB08108170FE3A7</key>
+		<key>B1517D3264593352E9C18B088E3B4190</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,0 +1,6 @@
+framework module NORLabelNode {
+  umbrella header "NORLabelNode-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -8,5 +8,5 @@ target 'ColorBlind' do
   pod 'HLSpriteKit', :git => 'https://github.com/hilogames/HLSpriteKit.git'
   pod 'EZSwiftExtensions'
   pod 'SwiftRandom'
-
+  pod 'NORLabelNode'
 end

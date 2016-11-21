@@ -1,11 +1,13 @@
 PODS:
   - EZSwiftExtensions (1.7)
   - HLSpriteKit (1.4.0)
+  - NORLabelNode (0.9.2)
   - SwiftRandom (1.0.0)
 
 DEPENDENCIES:
   - EZSwiftExtensions
   - HLSpriteKit (from `https://github.com/hilogames/HLSpriteKit.git`)
+  - NORLabelNode
   - SwiftRandom
 
 EXTERNAL SOURCES:
@@ -20,8 +22,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   EZSwiftExtensions: 4afef248066a036903d8496bf07bc355b22ce766
   HLSpriteKit: 228003674e4737d26e189780a3b9ddd2ac6a76b8
+  NORLabelNode: db8991d0344eefe1f9273f0a078141d7e175c447
   SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
 
-PODFILE CHECKSUM: f94c35d385c96696126ef857b1ffc1255e8b4d4a
+PODFILE CHECKSUM: d205cd177392a691dcbbbf71e3e79f0032e19c49
 
 COCOAPODS: 1.1.0.beta.1

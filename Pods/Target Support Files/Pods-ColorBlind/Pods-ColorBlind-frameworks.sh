@@ -86,10 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/EZSwiftExtensions/EZSwiftExtensions.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HLSpriteKit/HLSpriteKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NORLabelNode/NORLabelNode.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftRandom/SwiftRandom.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/EZSwiftExtensions/EZSwiftExtensions.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HLSpriteKit/HLSpriteKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NORLabelNode/NORLabelNode.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftRandom/SwiftRandom.framework"
 fi
