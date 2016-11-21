@@ -49,6 +49,24 @@ class GameSystem {
         }
     }
     
+    var difficulty: Int {
+        return UserDefaults.standard.integer(forKey: "difficulty")
+    }
+    
+    var highscoreKey: String {
+        let difficulty = self.difficulty
+        switch difficulty {
+        case -1:
+            return "Easy"
+        case 0:
+            return ""
+        case 1:
+            return "Hard"
+        default:
+            fatalError()
+        }
+    }
+    
     func onLanded(_ block: Block) {
         let collector = collectors[block.lane]
         if collector.node.colorCode == block.colorCode {
