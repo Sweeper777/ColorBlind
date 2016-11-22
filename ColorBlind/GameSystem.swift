@@ -10,7 +10,7 @@ class GameSystem {
     let liveIndicatorPosition: CGPoint
     let colors: [UIColor]
     let fallToYPosition: CGFloat
-    let numberOfLanes = 4
+    let numberOfLanes: Int
     let laneWidth: CGFloat
     var fallSpeed: TimeInterval = 4
     var collectors: [Collector] = []
@@ -103,6 +103,7 @@ class GameSystem {
     
     init(scene: GameScene) {
         self.scene = scene
+        numberOfLanes = UserDefaults.standard.integer(forKey: "difficulty") + 4
         let laneWidth = scene.view!.w / CGFloat(numberOfLanes)
         let point1 = CGPoint(x: laneWidth, y: 0)
         let point2 = CGPoint.zero
