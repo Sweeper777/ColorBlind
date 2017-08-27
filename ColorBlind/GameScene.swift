@@ -11,7 +11,7 @@ class GameScene: SKScene {
     var pauseScreen: SKSpriteNode!
         
     func initPauseScreen() {
-        let pauseBg = SKSpriteNode(imageNamed: "bg")
+        let pauseBg = SKSpriteNode(imageNamed: "bg2")
         pauseBg.anchorPoint = CGPoint.zero
         var viewCoords = CGPoint(x: 0, y: self.view!.h)
         pauseBg.position = self.view!.convert(viewCoords, to: self)
